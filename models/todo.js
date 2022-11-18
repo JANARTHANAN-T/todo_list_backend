@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const todoSchema = new Schema({
   title:String,
-  description:String
+  description:String,
+  deadline:Date
 });
 
 module.exports = mongoose.model("Todo", todoSchema);
