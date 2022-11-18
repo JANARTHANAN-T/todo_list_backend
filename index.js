@@ -47,8 +47,7 @@ app.get('/get',async(req,res)=>{
 app.post('/edit/:id',async(req,res)=>{
     try{
         const {id}=req.params
-        const {title,description}=req.body
-        console.log(id, title,description );
+        const {title,description,deadline}=req.body
         const todo = await Todo.findOneAndUpdate(id,{...req.body})
         console.log(todo);
         await todo.save()
